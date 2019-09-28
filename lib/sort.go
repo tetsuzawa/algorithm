@@ -1,6 +1,6 @@
 package lib
 
-//O(N^2)
+//O(N^2) (N^2 - N) / 2
 //It operates at high speed for data that is arranged to some extent.
 //while the computational complexity becomes O(N^2) if the data arranged descending order.
 func InsertionSort(a []int, n int) {
@@ -18,6 +18,9 @@ func InsertionSort(a []int, n int) {
 	}
 }
 
+//O(N^2) (N^2 - N) / 2
+//note that " if a[j] < a[j-1] " is stable, but it will not stable if "<" is "<=".
+//it is known that number of swaps describes disorder of row
 func BubbleSort(a []int, n int) {
 	var isArranged = true
 	var j int
