@@ -21,7 +21,9 @@ func main() {
 	fmt.Println(t)
 }
 
+/////////////////// inputln ////////////////
 
+////////////////// min max //////////////////
 func multiMin(nums ...int) int {
 	if len(nums) == 0 {
 		panic("funciton min() requires at least one argument.")
@@ -43,3 +45,18 @@ func multiMax(nums ...int) int {
 	}
 	return res
 }
+
+////////////////// min max //////////////////
+
+////////////////// print array without parenthesis //////////////////
+func PrintNoParenthesis(a []int) {
+	for i, n := range a {
+		fmt.Print(n)
+		if i == len(a)-1 {
+			fmt.Printf("\n")
+		} else {
+			fmt.Print(" ")
+		}
+	}
+}
+////////////////// print array without parenthesis //////////////////
