@@ -1,4 +1,4 @@
-package main
+package answers
 
 import (
 	"bufio"
@@ -40,7 +40,7 @@ func insertionSort(a []int, n int) {
 	}
 }
 
-func mainInsertionSort() {
+func MainInsertionSort() {
 	var n int
 	var s string
 

@@ -1,7 +1,10 @@
 package main
 
+import "github.com/tetsuzawa/algoLearn/answers"
+
 func main() {
-	//nSquTon()
-	//mainInsertionSort()
-	mainBubbleSort()
+	//answers.nSquTon()
+	//answers.mainInsertionSort()
+	//answers.MainBubbleSort()
+	answers.MainSelectionSort()
 }

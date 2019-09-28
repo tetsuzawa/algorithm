@@ -1,4 +1,4 @@
-package main
+package answers
 
 import (
 	"bufio"
@@ -24,7 +24,7 @@ func BubbleSort(a []int, n int) {
 	}
 }
 
-func mainBubbleSort() {
+func MainBubbleSort() {
 	var n int
 
 	sc = bufio.NewScanner(os.Stdin)
