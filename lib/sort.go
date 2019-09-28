@@ -30,8 +30,8 @@ func BubbleSort(a []int, n int) {
 		for j := n - 1; j > 0; j-- {
 			if a[j] < a[j-1] {
 				a[j], a[j-1] = a[j-1], a[j]
+				isArranged = true
 			}
-			isArranged = true
 		}
 	}
 }
@@ -51,5 +51,4 @@ func SelectionSort(a []int, n int) {
 		}
 		a[i], a[minj] = a[minj], a[i]
 	}
-
 }

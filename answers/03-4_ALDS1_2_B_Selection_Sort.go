@@ -48,6 +48,7 @@ func MainSelectionSort() {
 
 	var sl = make([]int, n)
 	for i, s := range strings.Split(sc.Text(), " ") {
+		//sl[i], _ = strconv.Atoi(s)
 		sl[i], _ = strconv.Atoi(s)
 	}
 
