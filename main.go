@@ -7,5 +7,6 @@ func main() {
 	//answers.mainInsertionSort()
 	//answers.MainBubbleSort()
 	//answers.MainSelectionSort()
-	answers.MainStableSort()
+	//answers.MainStableSort()
+	answers.MainStack()
 }
