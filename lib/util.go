@@ -10,13 +10,13 @@ import (
 /////////////////// inputln ////////////////
 var sc = bufio.NewScanner(os.Stdin)
 
-func inputln() string {
+func Inputln() string {
 	sc.Scan()
 	return sc.Text()
 }
 
 func main() {
-	s, t := inputln(), inputln()
+	s, t := Inputln(), Inputln()
 	fmt.Println(s)
 	fmt.Println(t)
 }
@@ -24,7 +24,7 @@ func main() {
 /////////////////// inputln ////////////////
 
 ////////////////// min max //////////////////
-func multiMin(nums ...int) int {
+func MultiMin(nums ...int) int {
 	if len(nums) == 0 {
 		panic("funciton min() requires at least one argument.")
 	}
@@ -35,7 +35,7 @@ func multiMin(nums ...int) int {
 	return res
 }
 
-func multiMax(nums ...int) int {
+func MultiMax(nums ...int) int {
 	if len(nums) == 0 {
 		panic("funciton max() requires at least one argument.")
 	}

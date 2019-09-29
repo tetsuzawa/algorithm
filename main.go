@@ -6,5 +6,7 @@ func main() {
 	//answers.nSquTon()
 	//answers.mainInsertionSort()
 	//answers.MainBubbleSort()
-	answers.MainSelectionSort()
+	//answers.MainSelectionSort()
+	//answers.MainStableSort()
+	answers.MainStack()
 }
