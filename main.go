@@ -8,5 +8,6 @@ func main() {
 	//answers.MainBubbleSort()
 	//answers.MainSelectionSort()
 	//answers.MainStableSort()
-	answers.MainStack()
+	//answers.MainStack()
+	answers.MainQueue()
 }
