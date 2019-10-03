@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -21,32 +22,34 @@ func NewObj(name string, body int) *Obj {
 	return obj
 }
 
-type Queues struct {
+type Queue struct {
 	Objs []Obj
 	Head int
 	Tail int
 	Max  int
 }
 
-func NewQueue(max int) *Queues {
-	queue := new(Queues)
-	queue.Objs = make([]Obj, max)
-	queue.Head, queue.Tail = 0, 0
-	return queue
+func NewQueue(max int) *Queue {
+	q := new(Queue)
+	q.Objs = make([]Obj, max*3)
+	q.Head, q.Tail = 0, 0
+	q.Max = max
+	return q
 }
 
-func (q *Queues) isEmpty() bool {
+func (q *Queue) isEmpty() bool {
 	return q.Head == q.Tail
 }
 
-func (q *Queues) isFull() bool {
+func (q *Queue) isFull() bool {
 	return q.Head == (q.Tail-1)%q.Max
+	//return q.Head == (q.Tail-1)%q.Max
 }
 
-func (q *Queues) Enqueue(obj Obj) error {
+func (q *Queue) Enqueue(obj Obj) error {
 	if q.isFull() {
 		err := errors.New("overflow: body is full")
-		return err
+	return err
 	}
 	//obj := Obj{name, x}
 	q.Objs[q.Tail] = obj
@@ -58,18 +61,26 @@ func (q *Queues) Enqueue(obj Obj) error {
 	return nil
 }
 
-func (q *Queues) Dequeue() (Obj, error) {
+func (q *Queue) Dequeue() (Obj, error) {
 	if q.isEmpty() {
 		err := errors.New("underflow: body is empty")
 		return Obj{}, err
 	}
-	obj := q.Objs[q.Tail]
+	obj := q.Objs[q.Head]
 	if q.Head+1 == q.Max {
 		q.Head = 0
 	} else {
 		q.Head++
 	}
 	return obj, nil
+}
+
+func min_04_3(x, y int) int {
+	if x < y{
+		return x
+	} else {
+		return y
+	}
 }
 
 func MainQueue() {
@@ -85,20 +96,23 @@ func MainQueue() {
 		sl = strings.Split(sc.Text(), " ")
 		qt, _ := strconv.Atoi(sl[1])
 		q.Objs[i] = Obj{sl[0], qt}
-		fmt.Println(q.Objs)
 	}
-	q.Head = 1
-	q.Tail = n + 1
+	q.Head = 0
+	q.Tail = n
 	var elaps int
 
 	for q.Head != q.Tail {
-		obj, _ := q.Dequeue()
-		lowerTime := min(qt, obj.Body)
+		obj, err := q.Dequeue()
+		if err != nil{
+			fmt.Println(err)
+		}
+		lowerTime := min_04_3(qt, obj.Body)
 		obj.Body -= lowerTime
 		elaps += lowerTime
-		fmt.Println("kko", q.Objs, lowerTime, elaps)
 		if obj.Body > 0{
-			q.Enqueue(obj)
+			if err = q.Enqueue(obj); err != nil{
+				log.Fatalln(err)
+			}
 		}else {
 			fmt.Println(obj.Name, elaps)
 		}
