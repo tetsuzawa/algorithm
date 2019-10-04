@@ -9,5 +9,6 @@ func main() {
 	//answers.MainSelectionSort()
 	//answers.MainStableSort()
 	//answers.MainStack()
-	answers.MainQueue()
+	//answers.MainQueue()
+	answers.MainLinearSearch()
 }
