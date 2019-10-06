@@ -62,9 +62,9 @@ func MainStack() {
 			b, _ := st.Pop()
 			_ = st.Push(a + b)
 		case "-":
-			b, _ := st.Pop()
 			a, _ := st.Pop()
-			_ = st.Push(a - b)
+			b, _ := st.Pop()
+			_ = st.Push(b - a)
 		case "*":
 			a, _ := st.Pop()
 			b, _ := st.Pop()
