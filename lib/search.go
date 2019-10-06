@@ -23,3 +23,19 @@ func LinearSearchGardner(arr []int, n, key int) (int, bool) {
 	}
 	return i, true
 }
+
+func BinarySearch(a []int, n, key int) int {
+	left := 0
+	right := n
+	for left < right {
+		mid := (left + right) / 2
+		if a[mid] == key {
+			return mid
+		} else if key < a[mid] {
+			right = mid
+		} else {
+			left = mid + 1
+		}
+	}
+	return -1
+}

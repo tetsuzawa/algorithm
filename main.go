@@ -10,5 +10,6 @@ func main() {
 	//answers.MainStableSort()
 	//answers.MainStack()
 	//answers.MainQueue()
-	answers.MainLinearSearch()
+	//answers.MainLinearSearch()
+	answers.MainBinarySearch()
 }
