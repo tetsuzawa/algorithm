@@ -1,10 +1,14 @@
 package answers
 
+import "strings"
+
 const (
 	M    int = 1046527
 	NULL int = -1
 	L    int = 14
 )
+
+var H string
 
 func getStr(s string) int {
 	if s == "A" {
@@ -20,11 +24,11 @@ func getStr(s string) int {
 	}
 }
 
-func getKey(ss []string) int {
+func getKey(ss string) int {
 	sum, p := 0, 1
 
-	for i := 0; i < len(ss); i++ {
-		sum += p * getStr(ss[i])
+	for _, s := range ss{
+		sum += p * getStr(string(s))
 		p *= 5
 	}
 	return sum
@@ -38,6 +42,12 @@ func h2(key int) int {
 	return 1 + (key % (M - 1))
 }
 
-func find(ss []string) int {
+func find(ss string) int {
+	key := getKey(ss)
+	i:=0
+	for {
+		h := (h1(key) + i * h2(key)) % M
+		if strings.Compare(H[])
+	}
 
 }
