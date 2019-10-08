@@ -1,6 +1,6 @@
 package answers
 
-import "strings"
+import "fmt"
 
 const (
 	M    int = 1046527
@@ -8,7 +8,7 @@ const (
 	L    int = 14
 )
 
-var H string
+var H []string
 
 func getStr(s string) int {
 	if s == "A" {
@@ -24,11 +24,12 @@ func getStr(s string) int {
 	}
 }
 
-func getKey(ss string) int {
+func getKey(ss []string) int {
+	//TODO is ss should be slice or row?
 	sum, p := 0, 1
 
 	for _, s := range ss{
-		sum += p * getStr(string(s))
+		sum += p * getStr(s)
 		p *= 5
 	}
 	return sum
@@ -42,12 +43,15 @@ func h2(key int) int {
 	return 1 + (key % (M - 1))
 }
 
-func find(ss string) int {
+func find(ss []string) bool {
 	key := getKey(ss)
 	i:=0
 	for {
 		h := (h1(key) + i * h2(key)) % M
-		if strings.Compare(H[])
+		fmt.Println(h)
+		//TODO
+		//if H[h] == ss{
+		//	return true
+		//}
 	}
-
 }
