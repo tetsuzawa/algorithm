@@ -11,5 +11,8 @@ func main() {
 	//answers.MainStack()
 	//answers.MainQueue()
 	//answers.MainLinearSearch()
-	answers.MainBinarySearch()
+	//answers.MainBinarySearch()
+	//answers.MainExhaustiveSearch()
+	answers.MainKoch()
 }
+
