@@ -13,6 +13,7 @@ func main() {
 	//answers.MainLinearSearch()
 	//answers.MainBinarySearch()
 	//answers.MainExhaustiveSearch()
-	answers.MainKoch()
+	//answers.MainKoch()
+	answers.MainMergeSort()
 }
 

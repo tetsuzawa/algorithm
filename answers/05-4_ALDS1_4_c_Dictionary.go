@@ -5,7 +5,7 @@ import "fmt"
 const (
 	M    int = 1046527
 	NULL int = -1
-	L    int = 14
+	//L    int = 14
 )
 
 var H []string
