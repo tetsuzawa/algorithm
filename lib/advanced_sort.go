@@ -41,3 +41,18 @@ func MergeSort(A []int, n, left, right int) {
 	}
 
 }
+
+//////////// Paetition ////////////
+
+func Partion(A []int, p, r int) {
+	x := A[r]
+	i := p - 1
+
+	for j := p; j < r; j++ {
+		if a[j] <= x {
+			i++
+			a[i], a[j] = a[j], a[i]
+		}
+	}
+	a[i+1], a[i] = a[i], a[i+1]
+}
