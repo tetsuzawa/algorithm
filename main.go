@@ -1,6 +1,8 @@
 package main
 
-import "github.com/tetsuzawa/algoLearn/answers"
+import (
+	"github.com/tetsuzawa/algoLearn/answers/07-1_ALDS1_5_B_Merge_Sort"
+)
 
 func main() {
 	//answers.nSquTon()
@@ -14,6 +16,6 @@ func main() {
 	//answers.MainBinarySearch()
 	//answers.MainExhaustiveSearch()
 	//answers.MainKoch()
-	answers.MainMergeSort()
+	_7_1_ALDS1_5_B_Merge_Sort.MainMergeSort()
 }
 

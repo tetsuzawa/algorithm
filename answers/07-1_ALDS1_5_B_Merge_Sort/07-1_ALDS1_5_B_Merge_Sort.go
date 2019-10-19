@@ -1,4 +1,4 @@
-package answers
+package _7_1_ALDS1_5_B_Merge_Sort
 
 import (
 	"bufio"

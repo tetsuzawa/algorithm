@@ -1,4 +1,4 @@
-package answers
+package _3_4_ALDS1_2_B_Selection_Sort
 
 import (
 	"bufio"

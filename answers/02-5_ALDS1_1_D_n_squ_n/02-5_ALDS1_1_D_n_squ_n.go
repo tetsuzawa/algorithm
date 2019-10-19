@@ -1,4 +1,4 @@
-package answers
+package _2_5_ALDS1_1_D_n_squ_n
 
 import (
 	"bufio"

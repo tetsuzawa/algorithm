@@ -42,9 +42,9 @@ func MergeSort(A []int, n, left, right int) {
 
 }
 
-//////////// Paetition ////////////
+//////////// Partition ////////////
 
-func Partion(A []int, p, r int) {
+func Partion(A []int, p, r int) int {
 	x := A[r]
 	i := p - 1
 
@@ -55,4 +55,14 @@ func Partion(A []int, p, r int) {
 		}
 	}
 	a[i+1], a[i] = a[i], a[i+1]
+	return i+1
+}
+
+//////////// Partition ////////////
+
+//////////// Quick Sort////////////
+func QuickSort(A []int, p, r int)  {
+	if p<r{
+		p = Partion(A, p, r)
+	}
 }

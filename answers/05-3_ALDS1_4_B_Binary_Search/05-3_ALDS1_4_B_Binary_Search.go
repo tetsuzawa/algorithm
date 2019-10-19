@@ -1,4 +1,4 @@
-package answers
+package _5_3_ALDS1_4_B_Binary_Search
 
 import (
 	"bufio"

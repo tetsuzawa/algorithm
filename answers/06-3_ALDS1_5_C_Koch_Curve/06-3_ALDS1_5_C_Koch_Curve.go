@@ -1,4 +1,4 @@
-package answers
+package _6_3_ALDS1_5_C_Koch_Curve
 
 import (
 	"bufio"

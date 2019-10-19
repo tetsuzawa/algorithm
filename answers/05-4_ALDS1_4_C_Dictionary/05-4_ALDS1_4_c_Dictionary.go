@@ -1,4 +1,4 @@
-package answers
+package _5_4_ALDS1_4_C_Dictionary
 
 import "fmt"
 

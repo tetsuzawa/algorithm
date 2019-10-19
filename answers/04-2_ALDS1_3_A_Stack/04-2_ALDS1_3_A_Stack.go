@@ -1,4 +1,4 @@
-package answers
+package _4_2_ALDS1_3_A_Stack
 
 import (
 	"bufio"

@@ -1,4 +1,4 @@
-package answers
+package _5_2_ALDS1_4_A_Linear_Search
 
 import (
 	"bufio"

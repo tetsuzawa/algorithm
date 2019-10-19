@@ -1,4 +1,4 @@
-package answers
+package _6_2_ALDS1_5_A_Exhastive_Search
 
 import (
 	"bufio"
