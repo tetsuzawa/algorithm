@@ -55,14 +55,16 @@ func Partition(a []int, p, r int) int {
 		}
 	}
 	a[i+1], a[i] = a[i], a[i+1]
-	return i+1
+	return i + 1
 }
 
 //////////// Partition ////////////
 
 //////////// Quick Sort////////////
-func QuickSort(A []int, p, r int)  {
-	if p<r{
-		p = Partition(A, p, r)
+func QuickSort(A []int, p, r int) {
+	if p < r {
+		q := Partition(A, p, r)
+		QuickSort(A, q, q-1)
+		QuickSort(A, q+1, r)
 	}
 }
