@@ -60,11 +60,25 @@ func Partition(a []int, p, r int) int {
 
 //////////// Partition ////////////
 
-//////////// Quick Sort////////////
-func QuickSort(A []int, p, r int) {
+//mostly O(n)
+//////////// Quick Sort ////////////
+func QuickSort(a []int, p, r int) {
 	if p < r {
-		q := Partition(A, p, r)
-		QuickSort(A, q, q-1)
-		QuickSort(A, q+1, r)
+		q := Partition(a, p, r)
+		QuickSort(a, q, q-1)
+		QuickSort(a, q+1, r)
 	}
+}
+
+//////////// Quick Sort ////////////
+
+//////////// Counting Sort ////////////
+func CountingSort(a, b []int, k int)  {
+	c := make([]int, k)
+
+	for j:=1;j<n;j++{
+		c[a[j]]++
+	}
+
+	for
 }
