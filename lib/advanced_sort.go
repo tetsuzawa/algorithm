@@ -73,12 +73,22 @@ func QuickSort(a []int, p, r int) {
 //////////// Quick Sort ////////////
 
 //////////// Counting Sort ////////////
-func CountingSort(a, b []int, k int)  {
+func CountingSort(a, b []int, k int) {
 	c := make([]int, k)
 
-	for j:=1;j<n;j++{
+	// record the emergence count of i to c[j]
+	for j := 1; j < n; j++ {
+		c[a[j]] = a[j]
 		c[a[j]]++
 	}
 
-	for
+	// record the emergence less count of i to c[i]
+	for i := 1; i < k; i++ {
+		c[i] = c[i] + c[i-1]
+	}
+
+	for j := n; n > 1; n-- {
+		b[c[a[j]]] = a[j]
+		c[a[j]]--
+	}
 }
