@@ -22,8 +22,8 @@ type Node struct {
 	right  int
 }
 
-var T = make([]Node, MAX)
 var n int
+var T = make([]Node, MAX)
 var D = make([]int, MAX)
 var H = make([]int, MAX)
 
@@ -120,7 +120,7 @@ func main() {
 	}
 	setDepth(root, 0)
 	setHeight(root)
-	for i:=0; i<n;i++{
+	for i := 0; i < n; i++ {
 		Print(i)
 	}
 }
