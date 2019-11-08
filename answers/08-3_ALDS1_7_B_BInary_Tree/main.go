@@ -68,8 +68,8 @@ func getSibling(u int) int {
 
 func Print(u int) {
 	fmt.Printf("node %d: ", u)
-	fmt.Printf("parent %d, ", T[u].parent)
-	fmt.Printf("sibling %d, ", getSibling(u))
+	fmt.Printf("parent = %d, ", T[u].parent)
+	fmt.Printf("sibling = %d, ", getSibling(u))
 	var deg int
 	if T[u].left != NIL {
 		deg++
