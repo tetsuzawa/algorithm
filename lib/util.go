@@ -61,11 +61,3 @@ func PrintNoParenthesis(a []int) {
 }
 ////////////////// print array without parenthesis //////////////////
 
-
-func isEven(x int) bool {
-	return x%2 == 0
-}
-
-func isOdd(x int) bool {
-	return x%2 != 0
-}
