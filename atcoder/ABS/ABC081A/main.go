@@ -22,7 +22,7 @@ func main() {
 	if is1(string(s[1])) {
 		sum += 1
 	}
-	if is1(string(s[1])) {
+	if is1(string(s[2])) {
 		sum += 1
 	}
 	fmt.Println(sum)
