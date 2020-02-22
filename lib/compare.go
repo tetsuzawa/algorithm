@@ -1,27 +1,9 @@
 package lib
 
 import (
-	"bufio"
-	"fmt"
 	"math"
-	"os"
 )
 
-/////////////////// inputln ////////////////
-var sc = bufio.NewScanner(os.Stdin)
-
-func Inputln() string {
-	sc.Scan()
-	return sc.Text()
-}
-
-func main() {
-	s, t := Inputln(), Inputln()
-	fmt.Println(s)
-	fmt.Println(t)
-}
-
-/////////////////// inputln ////////////////
 
 ////////////////// min max //////////////////
 func MultiMin(nums ...int) int {
@@ -48,16 +30,4 @@ func MultiMax(nums ...int) int {
 
 ////////////////// min max //////////////////
 
-////////////////// print array without parenthesis //////////////////
-func PrintNoParenthesis(a []int) {
-	for i, n := range a {
-		fmt.Print(n)
-		if i == len(a)-1 {
-			fmt.Printf("\n")
-		} else {
-			fmt.Print(" ")
-		}
-	}
-}
-////////////////// print array without parenthesis //////////////////
 

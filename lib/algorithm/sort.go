@@ -1,4 +1,4 @@
-package lib
+package algorithm
 
 //O(N^2) (N^2 - N) / 2
 // it does not depends on how data is arranged

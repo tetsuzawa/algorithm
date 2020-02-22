@@ -1,4 +1,4 @@
-package lib
+package algorithm
 
 //O(n)
 func LinearSearch(arr []int, n, key int) (int, bool) {

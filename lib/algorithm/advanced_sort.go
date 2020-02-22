@@ -1,4 +1,6 @@
-package lib
+package algorithm
+
+import "github.com/tetsuzawa/algoLearn/lib"
 
 //O(NlogN), guaranteed
 //it need certain size of memory to keep input data
@@ -77,7 +79,7 @@ func CountingSort(a, b []int, k int) {
 	c := make([]int, k)
 
 	// record the emergence count of i to c[j]
-	for j := 1; j < n; j++ {
+	for j := 1; j < lib.n; j++ {
 		c[a[j]] = a[j]
 		c[a[j]]++
 	}
@@ -87,7 +89,7 @@ func CountingSort(a, b []int, k int) {
 		c[i] = c[i] + c[i-1]
 	}
 
-	for j := n; n > 1; n-- {
+	for j := lib.n; lib.n > 1; lib.n-- {
 		b[c[a[j]]] = a[j]
 		c[a[j]]--
 	}
