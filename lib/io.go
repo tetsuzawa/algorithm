@@ -31,6 +31,7 @@ func nextInts(size int) []int {
 	}
 	return ns
 }
+
 /* ------------------------------- reader ------------------------------- */
 
 /* ------------------------------- inputln ------------------------------- */
@@ -49,7 +50,6 @@ func main() {
 
 /* ------------------------------- inputln ------------------------------- */
 
-
 /* ------------------------------- print array without parenthesis ------------------------------- */
 func PrintNoParenthesis(a []int) {
 	for i, n := range a {
@@ -61,4 +61,5 @@ func PrintNoParenthesis(a []int) {
 		}
 	}
 }
+
 /* ------------------------------- print array without parenthesis ------------------------------- */

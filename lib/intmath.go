@@ -21,4 +21,5 @@ func maxDigit(x int) int {
 func leastDigit(x int) int {
 	return x % 10
 }
+
 /* --------------- find the digits of the number  --------------- */

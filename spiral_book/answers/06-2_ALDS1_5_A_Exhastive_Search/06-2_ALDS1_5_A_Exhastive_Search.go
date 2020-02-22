@@ -37,11 +37,11 @@ func MainExhaustiveSearch() {
 	}
 	sc.Scan()
 	_, _ = strconv.Atoi(sc.Text())
-	for _, s := range strings.Split(sc.Text(), " "){
+	for _, s := range strings.Split(sc.Text(), " ") {
 		M, _ = strconv.Atoi(s)
-		if solve(0, M) == 1{
+		if solve(0, M) == 1 {
 			fmt.Println("yes")
-		}else {
+		} else {
 			fmt.Println("no")
 		}
 	}

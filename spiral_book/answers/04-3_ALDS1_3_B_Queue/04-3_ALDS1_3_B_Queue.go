@@ -49,7 +49,7 @@ func (q *Queue) isFull() bool {
 func (q *Queue) Enqueue(obj Obj) error {
 	if q.isFull() {
 		err := errors.New("overflow: body is full")
-	return err
+		return err
 	}
 	//obj := Obj{name, x}
 	q.Objs[q.Tail] = obj
@@ -76,7 +76,7 @@ func (q *Queue) Dequeue() (Obj, error) {
 }
 
 func min_04_3(x, y int) int {
-	if x < y{
+	if x < y {
 		return x
 	} else {
 		return y
@@ -103,17 +103,17 @@ func MainQueue() {
 
 	for q.Head != q.Tail {
 		obj, err := q.Dequeue()
-		if err != nil{
+		if err != nil {
 			fmt.Println(err)
 		}
 		lowerTime := min_04_3(qt, obj.Body)
 		obj.Body -= lowerTime
 		elaps += lowerTime
-		if obj.Body > 0{
-			if err = q.Enqueue(obj); err != nil{
+		if obj.Body > 0 {
+			if err = q.Enqueue(obj); err != nil {
 				log.Fatalln(err)
 			}
-		}else {
+		} else {
 			fmt.Println(obj.Name, elaps)
 		}
 	}

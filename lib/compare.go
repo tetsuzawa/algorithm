@@ -4,7 +4,6 @@ import (
 	"math"
 )
 
-
 ////////////////// min max //////////////////
 func MultiMin(nums ...int) int {
 	if len(nums) == 0 {
@@ -29,5 +28,3 @@ func MultiMax(nums ...int) int {
 }
 
 ////////////////// min max //////////////////
-
-

@@ -14,7 +14,7 @@ func insertionSort(a []int, n int) {
 
 	for k, p := range a {
 		fmt.Printf("%d", p)
-		if k == len(a) - 1 {
+		if k == len(a)-1 {
 			fmt.Printf("\n")
 		} else {
 			fmt.Print(" ")
@@ -31,7 +31,7 @@ func insertionSort(a []int, n int) {
 		a[j+1] = v
 		for k, p := range a {
 			fmt.Printf("%d", p)
-			if k == len(a) - 1 {
+			if k == len(a)-1 {
 				fmt.Printf("\n")
 			} else {
 				fmt.Print(" ")

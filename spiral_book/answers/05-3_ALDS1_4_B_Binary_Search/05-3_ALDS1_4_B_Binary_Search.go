@@ -8,7 +8,6 @@ import (
 	"strings"
 )
 
-
 func binarySearch05_3(n, key int) bool {
 	left, right := 0, n
 	var mid int

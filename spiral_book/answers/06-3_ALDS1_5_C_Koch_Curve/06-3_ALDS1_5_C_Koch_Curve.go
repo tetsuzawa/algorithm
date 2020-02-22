@@ -48,7 +48,7 @@ func MainKoch() {
 		x: 0,
 		y: 0,
 	}
-	var p2= Point{
+	var p2 = Point{
 		x: 100,
 		y: 0,
 	}

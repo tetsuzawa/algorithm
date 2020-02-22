@@ -21,9 +21,9 @@ func main() {
 		ai[i], _ = strconv.Atoi(v)
 		h -= ai[i]
 	}
-	if h<=0 {
+	if h <= 0 {
 		fmt.Println("Yes")
-	}else {
+	} else {
 		fmt.Println("No")
 	}
 }

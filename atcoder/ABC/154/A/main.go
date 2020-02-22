@@ -42,7 +42,7 @@ func main() {
 	if nextString() == S {
 		balls[S] -= 1
 	} else {
-		balls[T]-=1
+		balls[T] -= 1
 	}
 	fmt.Println(balls[S], balls[T])
 }

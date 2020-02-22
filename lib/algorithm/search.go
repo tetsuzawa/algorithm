@@ -24,15 +24,16 @@ func LinearSearchGardner(arr []int, n, key int) (int, bool) {
 	return i, true
 }
 
+//O(log_2 (n))
 func BinarySearch(a []int, n, key int) int {
 	left := 0
 	right := n
 	for left < right {
-		mid := (left + right) / 2
+		mid := left + (right-left)/2
 		if a[mid] == key {
 			return mid
 		} else if key < a[mid] {
-			right = mid
+			right = mid - 1
 		} else {
 			left = mid + 1
 		}

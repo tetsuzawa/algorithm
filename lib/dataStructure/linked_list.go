@@ -14,7 +14,7 @@ func init() {
 	null.Next = null
 }
 
-func insert(key int)  {
+func insert(key int) {
 	var x = new(*Node)
 	x.Key = key
 	x.Next = null.Next
@@ -23,6 +23,3 @@ func insert(key int)  {
 	x.Prev = null
 
 }
-
-
-
