@@ -19,8 +19,6 @@ func newScanner() func() string {
 	}
 }
 
-func nextString() string { return nextReader() }
-
 func nextInt() int { n, _ := strconv.Atoi(nextReader()); return n }
 
 func nextInts(size int) []int {
@@ -31,6 +29,26 @@ func nextInts(size int) []int {
 	return ns
 }
 
+func main() {
+	nextReader = newScanner()
+
+	N := nextInt()
+	ai := nextInts(N)
+
+	num := 0
+	for _, v := range ai {
+		if v == num+1 {
+			num++
+		}
+	}
+	cnt := -1
+	if num != 0 {
+		cnt = N - num
+	}
+	fmt.Println(cnt)
+}
+
+/*
 func main() {
 	nextReader = newScanner()
 
@@ -51,7 +69,7 @@ func main() {
 				fmt.Println(-1)
 				break
 			} else {
-				fmt.Println(i-1)
+				fmt.Println(i - 1)
 			}
 			//TODO (break)
 		}
@@ -61,3 +79,5 @@ func main() {
 		}
 	}
 }
+
+*/
