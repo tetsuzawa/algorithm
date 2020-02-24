@@ -29,8 +29,11 @@ func nextInts(size int) []int {
 	return ns
 }
 
-func main() {
+func init()  {
 	nextReader = newScanner()
+}
+
+func main() {
 	N := nextInt()
 	P := nextInts(N)
 

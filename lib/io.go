@@ -32,6 +32,10 @@ func nextInts(size int) []int {
 	return ns
 }
 
+func init()  {
+	nextReader = newScanner()
+}
+
 /* ------------------------------- reader ------------------------------- */
 
 /* ------------------------------- inputln ------------------------------- */
