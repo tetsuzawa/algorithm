@@ -13,3 +13,7 @@
 
 # mac
 .DS_Store
+
+# test files
+*.in
+*.out
