@@ -6,6 +6,14 @@ func pow(x, y int) int {
 	return int(math.Pow(float64(x), float64(y)))
 }
 
+func sum(xs []int) int {
+	var s int
+	for _, x := range xs {
+		s += x
+	}
+	return s
+}
+
 /* --------------- find the digits of the number  --------------- */
 // eg. x=18532, returns 1
 func maxDigit(x int) int {
