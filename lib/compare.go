@@ -28,3 +28,26 @@ func MultiMax(nums ...int) int {
 }
 
 ////////////////// min max //////////////////
+
+////////////////// equal slice //////////////////
+
+func equals(a, b []int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
+}
+
+////////////////// equal slice //////////////////
+
+////////////////// compare //////////////////
+func abs(a int) int { if a<0 { return -a }; return a }
+func min(a,b int) int { if a<b { return a }; return b }
+func max(a,b int) int { if a>b { return a }; return b }
+////////////////// compare //////////////////
+

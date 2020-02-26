@@ -1,70 +1,38 @@
-package lib
+package main
 
 import (
-	"math"
+	"bufio"
+	"fmt"
+	"os"
 	"sort"
 	"strconv"
 	"strings"
 )
 
-func maxMapKeys(mp map[int]int) []int {
-	maxKeys := make([]int, 0)
-	max := 0
-	for k, v := range mp {
-		if v > max {
-			maxKeys = append([]int{}, k)
-			max = v
-		} else if v == max {
-			maxKeys = append(maxKeys, k)
-		}
+var nextReader func() string
+
+func newScanner() func() string {
+	sc := bufio.NewScanner(os.Stdin)
+	sc.Buffer(make([]byte, 1024), int(1e11))
+	sc.Split(bufio.ScanWords)
+	return func() string {
+		sc.Scan()
+		return sc.Text()
 	}
-	return maxKeys
 }
 
-func pow(x, y int) int {
-	return int(math.Pow(float64(x), float64(y)))
-}
+func nextInt() int { n, _ := strconv.Atoi(nextReader()); return n }
 
-func sum(xs []int) int {
-	var s int
-	for _, x := range xs {
-		s += x
+func nextInts(size int) []int {
+	ns := make([]int, size)
+	for i := 0; i < size; i++ {
+		ns[i] = nextInt()
 	}
-	return s
+	return ns
 }
 
-/* --------------- find the digits of the number  --------------- */
-// eg. x=18532, returns 1
-func maxDigit(x int) int {
-	a := 0
-	for x != 0 {
-		a = x
-		x /= 10
-	}
-	return a
-}
-
-// eg. x=18532, returns 2
-func leastDigit(x int) int {
-	return x % 10
-}
-
-/* --------------- find the digits of the number  --------------- */
-
-/* --------------- 順列 permutation  --------------- */
-func Permute(nums []int) [][]int {
-	n := factorial(len(nums))
-	ret := make([][]int, 0, n)
-	permute(makeCopy(nums), &ret)
-	return ret
-}
-
-func SortedPermute(nums []int) [][]int {
-	n := factorial(len(nums))
-	ret := make([][]int, 0, n)
-	permute(makeCopy(nums), &ret)
-	ret = SortPermutation(ret)
-	return ret
+func init() {
+	nextReader = newScanner()
 }
 
 func permute(nums []int, ret *[][]int) {
@@ -102,7 +70,13 @@ func makeCopy(nums []int) []int {
 	return append([]int{}, nums...)
 }
 
-/* --------------- 2次元順列スライスの並び替え [[1,2,3],[3,2,1],[1,3,2]], return  [[1,2,3],[1,3,2],[3,2,1]] --------------- */
+func SortedPermute(nums []int) [][]int {
+	n := factorial(len(nums))
+	ret := make([][]int, 0, n)
+	permute(makeCopy(nums), &ret)
+	ret = SortPermutation(ret)
+	return ret
+}
 
 func SortPermutation(nums [][]int) [][]int {
 	is := Ints2dToInts(nums)
@@ -162,6 +136,39 @@ func StringToInts(s string) []int {
 	return is
 }
 
-/* --------------- 2次元順列スライスの並び替え [[1,2,3],[3,2,1],[1,3,2]], return  [[1,2,3],[1,3,2],[3,2,1]] --------------- */
-/* --------------- 順列 permutation  --------------- */
+func Equals(a, b []int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
+}
 
+func abs(a int) int {
+	if a < 0 {
+		return -1 * a
+	} else {
+		return a
+	}
+}
+
+func main() {
+	N := nextInt()
+	P := nextInts(N)
+	Q := nextInts(N)
+	permutation := SortedPermute(P)
+	var a, b int
+	for i, v := range permutation {
+		if Equals(P, v) {
+			a = i + 1
+		}
+		if Equals(Q, v) {
+			b = i + 1
+		}
+	}
+	fmt.Println(abs(a - b))
+}

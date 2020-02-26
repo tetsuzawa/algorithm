@@ -3,7 +3,8 @@
   <component name="Go" enabled="true" />
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <content url="file://$USER_HOME$/repo/research-tools" />
+    <content url="file://$MODULE_DIR$/../converter" />
+    <content url="file://$MODULE_DIR$/../playground/athretics" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
