@@ -49,6 +49,19 @@ func leastDigit(x int) int {
 	return x % 10
 }
 
+// eg. x=18532, returns 5
+func nDigits(x int) int {
+	if x == 0 {
+		return 1
+	}
+	var cnt int
+	for x != 0 {
+		cnt++
+		x /= 10
+	}
+	return cnt
+}
+
 /* --------------- find the digits of the number  --------------- */
 
 /* --------------- 順列 permutation  --------------- */
