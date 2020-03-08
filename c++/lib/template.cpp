@@ -231,3 +231,27 @@ vector<vector<ll>> comb(int n, int r) {
     return v;
 }
 /* ------------------- 組み合わせ ------------------- */
+
+/* ------------------- 順列 ------------------- */
+const ll MAX = 510000;  // 最大を決めておく
+// fac…階乗、finv…逆数の累積積、 inv…逆数
+ll fac[MAX], finv[MAX], inv[MAX];
+
+// テーブルを作る前処理、先にやっておく
+void nPr_init() {
+    fac[0] = fac[1] = 1;
+    finv[0] = finv[1] = 1;
+    inv[1] = 1;
+    for (int i = 2; i < MAX; i++) {
+        fac[i] = fac[i - 1] * i % MOD;
+        inv[i] = MOD - inv[MOD % i] * (MOD / i) % MOD;
+        finv[i] = finv[i - 1] * inv[i] % MOD;
+    }
+}
+
+// nPrを計算する (前処理は忘れないように)
+ll nPr(int n, int r) {
+    if (n < 0 || r < 0 || n < r) return 0;
+    return fac[n] * finv[n - r] % MOD;
+}
+/* ------------------- 順列 ------------------- */
