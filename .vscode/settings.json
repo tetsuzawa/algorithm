@@ -17,6 +17,7 @@
         "sstream": "cpp",
         "streambuf": "cpp",
         "tuple": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "iostream": "cpp"
     }
 }
