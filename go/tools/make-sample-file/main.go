@@ -23,13 +23,26 @@ func touch(path string) error {
 }
 
 func main() {
-	if len(os.Args) != 2 {
+	args := os.Args
+	if len(args) < 2 || 3 < len(args) {
 		fmt.Println(usage)
 		os.Exit(1)
 	}
-	num, err := strconv.Atoi(os.Args[1])
+	var start, end int
+	var err error
+	if len(args) == 2 {
+		start = 1
+		end, err = strconv.Atoi(os.Args[1])
+		check(err)
+	} else {
+		start, err = strconv.Atoi(os.Args[1])
+		check(err)
+		end, err = strconv.Atoi(os.Args[2])
+		check(err)
+
+	}
 	check(err)
-	for i := 1; i <= num; i++ {
+	for i := start; i <= end; i++ {
 		err = touch(fmt.Sprintf("sample-%d.in", i))
 		check(err)
 		err = touch(fmt.Sprintf("sample-%d.out", i))
@@ -42,4 +55,3 @@ func check(err error) {
 		panic(err)
 	}
 }
-
