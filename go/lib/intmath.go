@@ -176,5 +176,26 @@ func StringToInts(s string) []int {
 }
 
 /* --------------- 2次元順列スライスの並び替え [[1,2,3],[3,2,1],[1,3,2]], return  [[1,2,3],[1,3,2],[3,2,1]] --------------- */
-/* --------------- 順列 permutation  --------------- */
 
+/* ------------------- 最大公約数 ------------------- */
+// O(log(N))
+// 1個
+func gcd(a int, b int) int {
+	if b != 0 {
+		return gcd(b, a%b)
+	} else {
+		return a
+	}
+}
+
+// n個
+func ngcd(a []int) int {
+	var res int;
+	res = a[0];
+	for i := 1; i < len(a) && res != 1; i++ {
+		res = gcd(a[i], res);
+	}
+	return res;
+}
+
+/* ------------------- 最大公約数 ------------------- */
