@@ -13,16 +13,16 @@ import (
 func miniMaxSum(arr []int32) {
 	min := arr[0]
 	max := arr[0]
-	var sum int32
+	var sum int64
 	for _, v := range arr {
-		sum += v
+		sum += int64(v)
 		if v > max {
 			max = v
 		} else if v < min {
 			min = v
 		}
 	}
-	fmt.Println(sum-max, sum-min)
+	fmt.Println(sum-int64(max), sum-int64(min))
 }
 
 func main() {
