@@ -15,6 +15,14 @@ import (
 func bonetrousle(n int64, k int64, b int32) []int64 {
 	var i int64
 	for bit := 0; bit < (1 << k); bit++ {
+		var num int
+		for bits := bit; bits != 0; bits &= bits - 1 {
+			num++
+		}
+		fmt.Println("num", num)
+		if num != int(b) {
+			continue
+		}
 		fmt.Printf("bit: %010b\n", bit)
 		var sum int64
 		basket := make([]int64, 0)
@@ -23,6 +31,7 @@ func bonetrousle(n int64, k int64, b int32) []int64 {
 				sum += i
 				basket = append(basket, i)
 			}
+			fmt.Println("basket:", basket)
 			if sum == n && len(basket) == int(b) {
 				return basket
 			} else if sum > n || len(basket) > int(b) {
