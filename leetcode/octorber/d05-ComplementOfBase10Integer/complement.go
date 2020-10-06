@@ -13,7 +13,7 @@ func reversedInts(sl []int) []int {
 }
 
 func decToBits(dec int) (bitSlice []int) {
-	if dec==0{
+	if dec == 0 {
 		return []int{0}
 	}
 	bitSlice = make([]int, 0, bits.Len(uint(dec)))
@@ -45,7 +45,23 @@ func bitsToDec(bitSlice []int) (dec int) {
 	return
 }
 
+/*
 func bitwiseComplement(N int) int {
 	nBits := decToBits(N)
 	return bitsToDec(invertBits(nBits))
+}
+*/
+
+func bitwiseComplement(N int) int {
+	if N == 0 {
+		return 1
+	}
+	ans, cur := 0, 1
+	for N > 0 {
+		if N&1 == 0 {
+			ans += cur
+		}
+		N, cur = N>>1, cur<<1
+	}
+	return ans
 }
